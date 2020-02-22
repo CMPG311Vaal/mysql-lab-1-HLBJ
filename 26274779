@@ -1,0 +1,45 @@
+create database BidvestBank;
+
+use BidvestBank;
+
+create table BankBranch(
+    ..
+    branch_name varchar(10) not null primary key,
+    branch_city varchar(25) not null,
+    assets double not null
+);
+
+create table Customer(
+    customer_name varchar(25) not null primary key,
+    customer_street varchar(25) not null,
+    customer_city varchar(25) not null
+);
+
+create table CustomerAccount(
+    account_number varchar(5) not null primary key,
+    branch_name varchar(10),
+    balance double
+);
+
+create table Loan(
+    loan_number varchar(10) not null primary key,
+    branch_name varchar(10),
+    amount double
+);
+
+create table Depositor(
+    customer_name varchar(25) not null,
+    account_number varchar(10)
+);
+
+create table Borrower(
+    customer_name varchar(25) not null,
+    loan_number varchar(10)
+);
+
+create table Employee(
+    employee_name varchar(25) not null,
+    branch_name varchar(10),
+    salary double
+);
+
