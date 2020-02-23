@@ -1,0 +1,107 @@
+[33mcommit e30ec16e72cb16a48ae75f050437e1a922e163b0[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: HLBS <hbjackass@gmail.com>
+Date:   Sun Feb 23 00:26:30 2020 +0200
+
+    26274779 HL Bronkhorst
+
+[1mdiff --git a/26274779 b/26274779[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7b3ee0e[m
+[1m--- /dev/null[m
+[1m+++ b/26274779[m
+[36m@@ -0,0 +1,45 @@[m
+[32m+[m[32mcreate database BidvestBank;[m
+[32m+[m
+[32m+[m[32muse BidvestBank;[m
+[32m+[m
+[32m+[m[32mcreate table BankBranch([m
+[32m+[m[32m    ..[m
+[32m+[m[32m    branch_name varchar(10) not null primary key,[m
+[32m+[m[32m    branch_city varchar(25) not null,[m
+[32m+[m[32m    assets double not null[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table Customer([m
+[32m+[m[32m    customer_name varchar(25) not null primary key,[m
+[32m+[m[32m    customer_street varchar(25) not null,[m
+[32m+[m[32m    customer_city varchar(25) not null[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table CustomerAccount([m
+[32m+[m[32m    account_number varchar(5) not null primary key,[m
+[32m+[m[32m    branch_name varchar(10),[m
+[32m+[m[32m    balance double[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table Loan([m
+[32m+[m[32m    loan_number varchar(10) not null primary key,[m
+[32m+[m[32m    branch_name varchar(10),[m
+[32m+[m[32m    amount double[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table Depositor([m
+[32m+[m[32m    customer_name varchar(25) not null,[m
+[32m+[m[32m    account_number varchar(10)[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table Borrower([m
+[32m+[m[32m    customer_name varchar(25) not null,[m
+[32m+[m[32m    loan_number varchar(10)[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table Employee([m
+[32m+[m[32m    employee_name varchar(25) not null,[m
+[32m+[m[32m    branch_name varchar(10),[m
+[32m+[m[32m    salary double[m
+[32m+[m[32m);[m
+[32m+[m
+[1mdiff --git a/26274779.txt b/26274779.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..18f3aa5[m
+[1m--- /dev/null[m
+[1m+++ b/26274779.txt[m
+[36m@@ -0,0 +1,43 @@[m
+[32m+[m[32mcreate database BidvestBank;[m
+[32m+[m
+[32m+[m[32muse BidvestBank;[m
+[32m+[m
+[32m+[m[32mcreate table BankBranch([m
+[32m+[m[32m    branch_name varchar(10) not null primary key,[m
+[32m+[m[32m    branch_city varchar(25) not null,[m
+[32m+[m[32m    assets FLOAT not NULL[m[41m [m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table Customer([m
+[32m+[m[32m    customer_name varchar(25) not null primary key,[m
+[32m+[m[32m    customer_street varchar(25) not null,[m
+[32m+[m[32m    customer_city varchar(25) not null[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table CustomerAccount([m
+[32m+[m[32m    account_number varchar(5) not null primary key,[m
+[32m+[m[32m    branch_name varchar(10) not null,[m
+[32m+[m[32m    balance FLOAT not null[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table Loan([m
+[32m+[m[32m    loan_number varchar(10) not null primary key,[m
+[32m+[m[32m    branch_name varchar(10) not null,[m
+[32m+[m[32m    amount FLOAT not null[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table Depositor([m
+[32m+[m[32m    customer_name varchar(25) not null,[m
+[32m+[m[32m    account_number varchar(10) not null[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mcreate table Borrower([m
+[32m+[m[32m    customer_name varchar(25) not null,[m
+[32m+[m[32m    loan_number varchar(10) not null[m
+[32m+[m[32m);[m
+[32m+[m
+[32m+[m[32mCREATE TABLE Employee ([m
+[32m+[m[32m    employee_name VARCHAR(25) NOT NULL,[m
+[32m+[m[32m    branch_name VARCHAR(10) not null,[m
+[32m+[m[32m    salary FLOAT not null[m
+[32m+[m[32m);[m
+\ No newline at end of file[m
