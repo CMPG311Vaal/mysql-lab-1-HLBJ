@@ -130,4 +130,12 @@ SELECT * FROM BidvestBank.CustomerAccount where (balance < 700);
 SELECT customer_name FROM BidvestBank.Customer where (customer_city = 'Johannesburg');
 SELECT * FROM BidvestBank.Employee where (salary > 1500 && branch_name != 'Newtown');
 SELECT AVG(salary) FROM BidvestBank.Employee as avg_salary;
-SELECT branch_name FROM BidvestBank.BankBranch  where( assets = (Select max(assets) from BidvestBank.BankBranch));
+SELECT branch_name FROM BidvestBank.BankBranch where( assets = (Select max(assets) from BidvestBank.BankBranch));
+
+# Question 5
+
+i.	SELECT employee_name FROM bidvestbank.employee where(branch_name = 'Sunnyside');
+ii.	SELECT * FROM bidvestbank.borrower;
+iii.	SELECT account_number FROM bidvestbank.customeraccount where(balance > 900);
+iv.	SELECT account_number, balance FROM bidvestbank.customeraccount where(branch_name = 'Newtown' && balance > 600);
+v.	SELECT branch_name, assets FROM bidvestbank.bankbranch;
